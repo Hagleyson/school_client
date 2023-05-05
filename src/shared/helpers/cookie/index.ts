@@ -8,7 +8,11 @@ export function removeCookies() {
   destroyCookie(null, USER);
   toast.warn("Sessão Encerrada");
 }
-export function createSession(token: string, user: IUserResponse) {
+export function createSession(
+  token: string,
+  refresh: string,
+  user: IUserResponse
+) {
   setCookie(undefined, TOKEN, token, {
     maxAge: 60 * 60 * 11,
   });
